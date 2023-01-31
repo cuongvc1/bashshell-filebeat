@@ -26,7 +26,6 @@ then
 	chown root:root /etc/filebeat/filebeat.yml
 fi
 
-
 # Filebeat Config
 cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
@@ -35,7 +34,8 @@ paths:
 tags: `hostname`
 type: log
 output.logstash:
-hosts: ["172.25.210.213:5033"]
+  hosts: 
+  - 172.25.210.213:5033
 setup.template.settings:
   index.number_of_shards: 1
 processors:
