@@ -26,7 +26,8 @@ then
 	# touch /etc/filebeat/filebeat.yml
 	cd
 	chown root:root /etc/filebeat/filebeat.yml
-	# systemctl start filebeat.service
+	systemctl start filebeat.service
+	systemctl enable filebeat.service
 fi
 
 # cat <<END >/etc/filebeat/filebeat.yml
@@ -43,9 +44,9 @@ fi
 cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
 - enabled: true
-  paths:
-  tags: `hostname`
-  type: log
+paths:
+tags: `hostname`
+type: log
 output.logstash:
   hosts: 
   - 172.25.210.213:5033
@@ -71,7 +72,7 @@ for ((i=1;i<=n;i++));do
 	echo -n "paths[$i]= "
 	read m
 	a[$i]=$m
-	sed -i "/paths:$/a\
+	sed -i "/paths:$/a\ 
 	\  - $m" /etc/filebeat/filebeat.yml
 	echo -e " "
 done
@@ -131,5 +132,5 @@ echo -e " "
 echo "Starting up the filebeat.service"
 systemctl daemon-reload
 sleep 1
-systemctl start filebeat.service
+systemctl restart filebeat.service
 systemctl is-active filebeat.service >/dev/null 2>&1 && echo "Congradulations.. Filebeat is now starting & sending logs" || echo "Something is Wrong.! Check the configuration"
