@@ -30,9 +30,9 @@ fi
 cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
 - enabled: true
-paths:
-tags: `hostname`
-type: log
+  paths:
+  tags: `hostname`
+  type: log
 output.logstash:
   hosts: 
   - 172.25.210.213:5033
