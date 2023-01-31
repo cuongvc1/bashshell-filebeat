@@ -54,9 +54,9 @@ setup.template.settings:
 processors:
 - add_host_metadata:
     when.not.contains.tags: forwarded
-- add_cloud_metadata: {}
-- add_docker_metadata: {}
-- add_kubernetes_metadata: {}
+- add_cloud_metadata: null
+- add_docker_metadata: null
+- add_kubernetes_metadata: null
 END
 
 # tags: ["testTag"]
