@@ -58,6 +58,8 @@ for ((i=1;i<=n;i++));do
 	echo -n "Path[$i]= "
 	read m
 	a[$i]=$m
+	sed -i "/paths:$/a\ - $m" /etc/filebeat/filebeat.yml
+	echo -e " "
 done
 
 ## su dung file de nhap path
