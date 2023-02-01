@@ -73,7 +73,7 @@ for ((i=1;i<=n;i++));do
 	read m
 	a[$i]=$m
 	sed -i "/paths:$/a\
-	- $m" /etc/filebeat/filebeat.yml
+	\ - $m" /etc/filebeat/filebeat.yml
 	echo -e " "
 done
 
