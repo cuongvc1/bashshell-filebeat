@@ -23,7 +23,7 @@ then
 	echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
 	apt-get update
 	sudo apt-get install filebeat
-	# touch /etc/filebeat/filebeat.yml
+	touch /etc/filebeat/filebeat.yml
 	cd
 	chown root:root /etc/filebeat/filebeat.yml
 	systemctl start filebeat.service
