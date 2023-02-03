@@ -67,6 +67,7 @@ do
 done
 
 sleep 1
+echo -n "Nhap ten tags: "
 read -e -p 'tag of logs. [E.x. testTag] => ' TAG1
 /bin/sed -i s/testTag/$TAG1/g /etc/filebeat/filebeat.yml
 echo -e " "
