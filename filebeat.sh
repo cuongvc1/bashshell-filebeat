@@ -35,7 +35,7 @@ filebeat.inputs:
   paths:
   - /var/log/syslog
   - /var/log/auth.log
-  tags: testTag
+  tags: security_system
   type: log
 output.logstash:
   hosts: 
@@ -68,11 +68,11 @@ do
 	echo -e " "
 done
 
-sleep 1
-echo -n "Nhap ten tags: "
-read -e -p 'tag of logs. [E.x. testTag] => ' TAG1
-/bin/sed -i s/testTag/$TAG1/g /etc/filebeat/filebeat.yml
-echo -e " "
+#sleep 1
+#echo -n "Nhap ten tags: "
+#read -e -p 'tag of logs. [E.x. testTag] => ' TAG1
+#/bin/sed -i s/testTag/$TAG1/g /etc/filebeat/filebeat.yml
+#echo -e " "
 
 echo -e " "
 echo "Starting up the filebeat.service"
