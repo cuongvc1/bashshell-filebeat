@@ -33,6 +33,8 @@ cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
 - enabled: true
   paths:
+  - /var/log/syslog
+  - /var/log/auth.log
   tags: testTag
   type: log
 output.logstash:
