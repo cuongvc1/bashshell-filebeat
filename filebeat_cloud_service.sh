@@ -123,8 +123,8 @@ cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
 - enabled: true
   paths:
-  - /var/log/syslog
-  - /var/log/auth.log
+  - /var/log/messages
+  - /var/log/secure
   tags: cloud_services
   type: log
 output.logstash:
