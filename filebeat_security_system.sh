@@ -123,7 +123,7 @@ then
     then
         
         touch /etc/yum.repos.d/elastic.repo
-        cat <<END >/etc/yum.repos.d/elastic.repo
+cat <<END >/etc/yum.repos.d/elastic.repo
         [elastic-8.x]
         name=Elastic repository for 8.x packages
         baseurl=https://artifacts.elastic.co/packages/8.x/yum
