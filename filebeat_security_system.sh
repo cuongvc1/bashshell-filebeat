@@ -121,8 +121,9 @@ then
 
     if [ $choose == 1 ]
     then
-        
+        rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
         touch /etc/yum.repos.d/elastic.repo
+#Create a file with a .repo extension 
 cat <<END >/etc/yum.repos.d/elastic.repo
 [elastic-8.x]
 name=Elastic repository for 8.x packages
@@ -133,7 +134,6 @@ enabled=1
 autorefresh=1
 type=rpm-md
 END
-        rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
         yum install filebeat
         cd
         chown root:root /etc/filebeat/filebeat.yml
@@ -141,7 +141,6 @@ END
         systemctl enable filebeat.service
     fi
 
-#Create a file with a .repo extension 
 
 
 # Filebeat Config
