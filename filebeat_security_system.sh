@@ -41,7 +41,7 @@ filebeat.inputs:
 paths:
 - /var/log/syslog
 - /var/log/auth.log
-tags: testTag
+tags: security_system
 type: log
 output.logstash:
 hosts: 
@@ -126,7 +126,7 @@ filebeat.inputs:
   paths:
   - /var/log/messages
   - /var/log/secure
-  tags: testTag
+  tags: security_system
   type: log
 output.logstash:
   hosts: 
