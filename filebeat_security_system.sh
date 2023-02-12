@@ -1,8 +1,4 @@
 #!/bin/sh
-echo "1. infrastructure
-2. cloud_platform
-3. cloud_services"
-read -e -p 'Please choose for index_name, 1 or 2 or 3. [E.x. infrastructure || cloud_platform || cloud_services ] => ' team
 
 echo "1. ubuntu
 2. centos"
