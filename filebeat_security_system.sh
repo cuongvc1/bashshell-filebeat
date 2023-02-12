@@ -1,4 +1,28 @@
 #!/bin/sh
+echo "1. infrastructure
+2. cloud_platform
+3. cloud_services"
+read -e -p 'Please choose for index_name, 1 or 2 or 3. [E.x. infrastructure || cloud_platform || cloud_services ] => ' team
+
+if [ $team == 1 ]
+then
+    curl -o filebeat_security_system.sh https://raw.githubusercontent.com/cuongvc1/bashshell-filebeat/main/filebeat_cloud_service.sh
+    bash filebeat_security_system.sh
+else
+if [ $team == 2 ]
+then
+    curl -o filebeat_cloud_platform.sh https://raw.githubusercontent.com/cuongvc1/bashshell-filebeat/main/filebeat_cloud_platform.sh 
+    bash filebeat_cloud_platform.sh 
+else
+if [ $team == 3 ]
+then
+    curl -o filebeat_cloud_service.sh https://raw.githubusercontent.com/cuongvc1/bashshell-filebeat/main/filebeat_cloud_service.sh 
+    bash filebeat_cloud_service.sh
+else
+    exit 0
+fi
+fi
+fi
 
 echo "1. ubuntu
 2. centos"
@@ -41,7 +65,7 @@ filebeat.inputs:
 paths:
 - /var/log/syslog
 - /var/log/auth.log
-tags: security_system
+tags: testTag
 type: log
 output.logstash:
 hosts: 
@@ -88,7 +112,7 @@ then
     while [[ "$choose" != "1" ]] && [[ "$choose" != "2" ]] || [[ "$choose" == '' ]]
         do
             read -e -p 'Do you want to 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
-        counter=$((counter + 1))
+            counter=$((counter + 1))
         if [ $counter == 3 ]
         then
             exit 0
@@ -117,6 +141,9 @@ END
         systemctl enable filebeat.service
     fi
 
+#Create a file with a .repo extension 
+
+
 # Filebeat Config
 cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
@@ -124,7 +151,7 @@ filebeat.inputs:
   paths:
   - /var/log/messages
   - /var/log/secure
-  tags: security_system
+  tags: testTag
   type: log
 output.logstash:
   hosts: 
