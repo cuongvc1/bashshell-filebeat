@@ -123,6 +123,13 @@ then
     then
         rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
         touch /etc/yum.repos.d/elastic.repo
+        yum install filebeat
+        cd
+        chown root:root /etc/filebeat/filebeat.yml
+        systemctl start filebeat.service
+        systemctl enable filebeat.service
+    fi
+
 #Create a file with a .repo extension 
 cat <<END >/etc/yum.repos.d/elastic.repo
 [elastic-8.x]
@@ -134,14 +141,6 @@ enabled=1
 autorefresh=1
 type=rpm-md
 END
-        yum install filebeat
-        cd
-        chown root:root /etc/filebeat/filebeat.yml
-        systemctl start filebeat.service
-        systemctl enable filebeat.service
-    fi
-
-
 
 # Filebeat Config
 cat <<END >/etc/filebeat/filebeat.yml
