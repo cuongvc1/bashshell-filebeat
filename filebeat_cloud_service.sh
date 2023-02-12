@@ -99,13 +99,6 @@ then
     then
         rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
         touch /etc/yum.repos.d/elastic.repo
-        yum install filebeat
-        cd
-        chown root:root /etc/filebeat/filebeat.yml
-        systemctl start filebeat.service
-        systemctl enable filebeat.service
-    fi
-
 #Create a file with a .repo extension 
 cat <<END >/etc/yum.repos.d/elastic.repo
 [elastic-8.x]
@@ -117,7 +110,12 @@ enabled=1
 autorefresh=1
 type=rpm-md
 END
-
+        yum install filebeat
+        cd
+        chown root:root /etc/filebeat/filebeat.yml
+        systemctl start filebeat.service
+        systemctl enable filebeat.service
+    
 # Filebeat Config
 cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
@@ -163,5 +161,6 @@ END
     sleep 1
     systemctl restart filebeat.service
     systemctl is-active filebeat.service >/dev/null 2>&1 && echo "Congradulations.. Filebeat is now starting & sending logs" || echo "Something is Wrong.! Check the configuration"
+fi
 fi
 fi
