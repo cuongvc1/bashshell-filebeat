@@ -39,13 +39,13 @@ cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
 - enabled: true
   paths:
-  - /var/log/messages
-  - /var/log/secure
-  tags: testTag
+  - /var/log/syslog
+  - /var/log/auth.log
+  tags: cloud_platform
   type: log
 output.logstash:
   hosts: 
-  - 172.25.210.213:5033
+  - collectlog.infiniband.vn:5033
 setup.template.settings:
   index.number_of_shards: 1
 processors:
