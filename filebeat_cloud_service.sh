@@ -38,16 +38,16 @@ then
 cat <<END >/etc/filebeat/filebeat.yml
 filebeat.inputs:
 - enabled: true
-paths:
-- /var/log/syslog
-- /var/log/auth.log
-tags: cloud_services
-type: log
+  paths:
+  - /var/log/messages
+  - /var/log/secure
+  tags: testTag
+  type: log
 output.logstash:
-hosts: 
-- collectlog.infiniband.vn:5033
+  hosts: 
+  - 172.25.210.213:5033
 setup.template.settings:
-index.number_of_shards: 1
+  index.number_of_shards: 1
 processors:
 - add_host_metadata:
     when.not.contains.tags: forwarded
