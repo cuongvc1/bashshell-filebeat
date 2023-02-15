@@ -45,7 +45,7 @@ tags: cloud_services
 type: log
 output.logstash:
 hosts: 
-- 172.25.210.213:5033
+- collectlog.infiniband.vn:5033
 setup.template.settings:
 index.number_of_shards: 1
 processors:
