@@ -12,7 +12,7 @@ then
 
     while [[ "$choose" != "1" ]] && [[ "$choose" != "2" ]] || [[ "$choose" == '' ]]
         do
-            read -e -p 'Do you want to 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
+            read -e -p 'Ban muon chon 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
             counter=$((counter + 1))
             if [ $counter == 3 ]
             then
@@ -92,7 +92,7 @@ then
 
     while [[ "$choose" != "1" ]] && [[ "$choose" != "2" ]] || [[ "$choose" == '' ]]
         do
-            read -e -p 'Do you want to 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
+            read -e -p 'Ban muon chon 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
         counter=$((counter + 1))
         if [ $counter == 3 ]
         then
