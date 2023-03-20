@@ -58,8 +58,7 @@ END
 
     sleep 1
     declare -a a
-    echo -n "--------------------------------------------------------------------
-Path mac dinh: 
+    echo -n "Path mac dinh: 
 - /var/log/syslog
 - /var/log/auth.log
 Neu khong muon them path. Nhan phim 0 -> enter
@@ -150,8 +149,7 @@ END
 
     sleep 1
     declare -a a
-    echo -n "--------------------------------------------------------------------
-Path mac dinh:
+    echo -n "Path mac dinh:
 - /var/log/messages
 - /var/log/secure
 Neu khong muon them path. Nhan phim 0 -> enter
