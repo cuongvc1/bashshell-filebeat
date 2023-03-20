@@ -2,7 +2,7 @@
 
 echo "1. ubuntu
 2. centos"
-read -e -p 'Please choose for server 1 or 2. [E.x. Ubuntu || Centos] => ' os
+read -e -p 'Chon OS-server 1 or 2. [E.x. Ubuntu || Centos] => ' os
 
 if [ $os == 1 ]
 then
@@ -58,9 +58,11 @@ END
 
     sleep 1
     declare -a a
+    echo -n "--------------------------------------------------------------------"
     echo -n "Path mac dinh: 
 - /var/log/syslog
 - /var/log/auth.log
+Neu khong muon them path. Nhan phim 0 -> enter
 Neu muon them path. Nhap so path muon xem log: "
     read n
     for ((i=1;i<=n;i++));
@@ -148,9 +150,11 @@ END
 
     sleep 1
     declare -a a
+    echo -n "--------------------------------------------------------------------"
     echo -n "Path mac dinh: 
 - /var/log/messages
 - /var/log/secure
+Neu khong muon them path. Nhan phim 0 -> enter
 Neu muon them path. Nhap so path muon xem log: "
     read n
     for ((i=1;i<=n;i++));
