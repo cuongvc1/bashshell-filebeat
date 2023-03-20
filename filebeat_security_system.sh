@@ -2,7 +2,7 @@
 
 echo "1. ubuntu
 2. centos"
-read -e -p 'Please choose for server 1 or 2. [E.x. Ubuntu || Centos] => ' os
+read -e -p 'Chon OS-server 1 or 2. [E.x. Ubuntu || Centos] => ' os
 
 if [ $os == 1 ]
 then
@@ -12,7 +12,7 @@ then
 
     while [[ "$choose" != "1" ]] && [[ "$choose" != "2" ]] || [[ "$choose" == '' ]]
         do
-            read -e -p 'Do you want to 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
+            read -e -p 'Ban muon chon 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
             counter=$((counter + 1))
             if [ $counter == 3 ]
             then
@@ -58,7 +58,12 @@ END
 
     sleep 1
     declare -a a
-    echo -n "Nhap so path muon xem log: "
+    echo -n "--------------------------------------------------------------------"
+    echo -n "Path mac dinh: 
+- /var/log/syslog
+- /var/log/auth.log
+Neu khong muon them path. Nhan phim 0 -> enter
+Neu muon them path. Nhap so path muon xem log: "
     read n
     for ((i=1;i<=n;i++));
     do
@@ -87,7 +92,7 @@ then
 
     while [[ "$choose" != "1" ]] && [[ "$choose" != "2" ]] || [[ "$choose" == '' ]]
         do
-            read -e -p 'Do you want to 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
+            read -e -p 'Ban muon chon 1 or 2. [E.x. 1-setup || 2-edit] => ' choose
             counter=$((counter + 1))
         if [ $counter == 3 ]
         then
@@ -145,7 +150,12 @@ END
 
     sleep 1
     declare -a a
-    echo -n "Nhap so path muon xem log: "
+    echo -n "--------------------------------------------------------------------"
+    echo -n "Path mac dinh: 
+- /var/log/messages
+- /var/log/secure
+Neu khong muon them path. Nhan phim 0 -> enter
+Neu muon them path. Nhap so path muon xem log: "
     read n
     for ((i=1;i<=n;i++));
     do
