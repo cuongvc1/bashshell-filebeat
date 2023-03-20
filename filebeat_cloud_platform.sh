@@ -58,7 +58,10 @@ END
 
     sleep 1
     declare -a a
-    echo -n "Nhap so path muon xem log: "
+    echo -n "Path mac dinh: 
+- /var/log/syslog
+- /var/log/auth.log
+Neu muon them path. Nhap so path muon xem log: "
     read n
     for ((i=1;i<=n;i++));
     do
@@ -145,7 +148,10 @@ END
 
     sleep 1
     declare -a a
-    echo -n "Nhap so path muon xem log: "
+    echo -n "Path mac dinh: 
+- /var/log/messages
+- /var/log/secure
+Neu muon them path. Nhap so path muon xem log: "
     read n
     for ((i=1;i<=n;i++));
     do
